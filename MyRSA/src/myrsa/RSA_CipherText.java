@@ -17,5 +17,9 @@ class RSA_CipherText implements CipherText{
     {
         this.c = c;
     }
+    public String toString()
+    {
+        return c.toString();
+    }
     
 }

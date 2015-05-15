@@ -17,5 +17,9 @@ class RSA_PlainText implements PlainText{
     {
         this.m = m;
     }
+    public String toString()
+    {
+        return m.toString();
+    }
     
 }

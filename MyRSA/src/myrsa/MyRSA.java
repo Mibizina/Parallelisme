@@ -157,18 +157,20 @@ public class MyRSA implements CipherScheme{
         cles = rsa.Keygen();
         Random rs_random = new Random();
         BigInteger message;
+        
         message = new BigInteger(1024, rs_random);
         System.out.println("message = " + message);
+        
         RSA_PlainText monmess = new RSA_PlainText(message);
         RSA_CipherText texte_chiffre = rsa.Encrypt(monmess,cles.pkey);
-        System.out.println("cle public = " + cles.pkey.e);
-        System.out.println("cle public = " + cles.pkey.n);
+        
+        System.out.println("cle public e = " + cles.pkey.e);
+        System.out.println("cle public n = " + cles.pkey.n);
         System.out.println("texte chiffre = " + texte_chiffre);
+        
         RSA_PlainText rems = rsa.Decrypt(texte_chiffre, cles.skey);
-        System.out.println("texte chiffre = " + String.valueOf(rems));
-        System.out.println("texte chiffre = " + rems.toString());
-       // String mms = ""+texte_chiffre;
-       // System.out.println("texte chiffre = " + mms);
+        System.out.println("texte clair = " + rems);
+       
         
     }
     
